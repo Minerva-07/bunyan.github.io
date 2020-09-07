@@ -1,0 +1,43 @@
+$('#search-button').on('click', function () {
+	
+	$.ajax({
+		url		: 'http://www.omdbapi.com',
+		type 	: 'get',
+		dataType: 'json',
+		data 	: {
+			'apikey': '68722b76',
+			's'		: $('#search-input').val()
+		},
+		success: function (result){
+			console.log(result)
+		}
+	})
+
+})
+
+
+
+
+
+
+<div class="container" id="coklah"> 
+		<div class="row mt-3 justify-content-center">
+			<div class="col-md-8">
+				<h1 class="text-center">Search Movie</h1>
+        		<h4 class="text-center">Ini yang pake API</h4>
+				<div class="input-group mb-3">
+  				<input type="text" class="form-control" placeholder="Judul Film" id="search-input">
+  				<div class="input-group-append">
+    			<button class="btn btn-outline-secondary" type="button" id="search-button">Search</button>
+  				</div>
+				</div>
+			</div>
+		</div>
+
+		<hr id="">
+
+		<div class="row" id="movie-list">
+			
+		</div>
+
+	</div>
